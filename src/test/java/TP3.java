@@ -46,6 +46,7 @@ public class TP3 {
     final String FIRST_RESULT  ="[data-cel-widget=MAIN-SEARCH_RESULTS-2]";
     final String PANIER_BUTTON ="#add-to-cart-button";
     final String MERCI_BUTTON  ="span#attachSiNoCoverage";
+    final String OPEN_PANIER_BUTTON  ="span#attachSiNoCoverage";
     final String SEARCH_PRODUCT="Apple iPhone 13 Pro Max (256 Go) - Vert Alpin";
 
     @BeforeMethod
