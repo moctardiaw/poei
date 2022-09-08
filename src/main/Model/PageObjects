@@ -1,0 +1,29 @@
+-    HomePage
+         acceptCookie() : 
+    o    SearchWithButton(String keyword): enter keyword in search bar and click in button
+    o    SearchWithEnter(String keyword): enter keyword in search bar and press enter
+-    SearchResultPage
+    o    openSearchResult(int index): click the search result with index n
+-    ProductPage
+    o    addToCart(): click ajouter au panier button
+    o    refuseAppleCare() : click non merci
+    o    openCart() : click cart button
+-    CartPage
+    o    selectQuantity(int quantity): select quantity in quantity dropdown
+    o    getFirstProductName(): return text of first product name
+    o    getFirstProductCapacity(): return text of first product capacity
+    o    getFirstProductColor(): return text of color
+    o    getFirstProductConfiguration(): return text of configuration
+    o    getSubtotalCart(): return subtotal text at the bottom of the cart
+    o    getSubtotalBuybox(): return subtotal text in the buybox
+
+
+
+HomePage.searchWithButton(“iphone”);
+SearchResultPage.openSearchResult(0);
+ProductPage.addToCart();
+ProductPage.refuseAppleCare();
+ProductPage.openCart();
+CartPage.selectQuantity();
+
+Assert.assertEquals(CartPage.getFirstProductName(), expectedProductName, message);
