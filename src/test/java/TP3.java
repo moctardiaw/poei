@@ -86,13 +86,17 @@ public class TP3 {
         /*Click premier resultat*/
         WebElement premierResultat = driver.findElement(By.cssSelector("[data-cel-widget=MAIN-SEARCH_RESULTS-2]"));
         premierResultat.click();
-        sleeping(1000);
+        sleeping(2000);
         /*Click panier*/
-        WebElement panierButton = driver.findElement(By.cssSelector("#add-to-cart-button"));
+        //WebElement panierButton = driver.findElement(By.cssSelector("#add-to-cart-button"));
+        //panierButton.click();
+        WebElement panierButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("add-to-cart-button")));
         panierButton.click();
         sleeping(5000);
         /*Click Nomerci*/
-        WebElement nomerciButton = driver.findElement(By.cssSelector("span#attachSiNoCoverage"));
+        //WebElement nomerciButton = driver.findElement(By.cssSelector("span#attachSiNoCoverage"));
+        //nomerciButton.click();
+        WebElement nomerciButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("span#attachSiNoCoverage")));
         nomerciButton.click();
         sleeping(5000);
         /*Open Panier*/
