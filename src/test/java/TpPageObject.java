@@ -49,6 +49,12 @@ public class TpPageObject {
         System.out.println("*********************OH_bad_master_do*****************");
         System.out.println(cartPage.getInformations());
     }
+
+    /**
+     * HomePage [acceptCookie]
+     *          [searchWithButton]
+     *                            -> SearchResultPage [openProduct] -> ProductPage -> CartPage
+     */
     @Test
     public void testPO1() {
         HomePage homePage = new HomePage(driver);
