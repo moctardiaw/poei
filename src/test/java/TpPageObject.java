@@ -1,3 +1,7 @@
+import amazon.CartPage;
+import amazon.HomePage;
+import amazon.ProductPage;
+import amazon.SearchResultPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -51,9 +55,9 @@ public class TpPageObject {
     }
 
     /**
-     * HomePage [acceptCookie]
+     * amazon.HomePage [acceptCookie]
      *          [searchWithButton]
-     *                            -> SearchResultPage [openProduct] -> ProductPage -> CartPage
+     *                            -> amazon.SearchResultPage [openProduct] -> amazon.ProductPage -> amazon.CartPage
      */
     @Test
     public void testPO1() {
