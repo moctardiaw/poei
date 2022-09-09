@@ -46,7 +46,7 @@ public class TpPageObject {
         CartPage cartPage = new CartPage(driver);
         cartPage.selectQuantity(QUANTITY);
         System.out.println(cartPage.getFirsProductName());
-        System.out.println("*********************OH_bad*****************");
+        System.out.println("*********************OH_bad_master_do*****************");
         System.out.println(cartPage.getInformations());
     }
     @Test
