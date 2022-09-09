@@ -65,7 +65,7 @@ public class TpPageObject {
     public void testPO2(){
 
         /**
-         * Hover
+         * Hover rm -rf : remove recursive force
          */
         HomePage homePage = new HomePage(driver);
 
