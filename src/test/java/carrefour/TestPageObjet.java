@@ -1,5 +1,6 @@
 package carrefour;
 
+import amazon.HomePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -20,9 +21,20 @@ public class TestPageObjet {
     @Test
     public void testScenario_1(){
 
+        carrefour.HomePage homePage = new carrefour.HomePage(driver);
+        homePage.acceptCookie().goShopping().hoverMenuRayon().navMenuRayon().sportMenuRayon().bestSellerMenuRayon().seeProduct();
+        sleeping(3000);
     }
     @AfterMethod
     public void teardown(){
         driver.quit();
+    }
+
+    public void sleeping(int duration){
+        try {
+            Thread.sleep(duration);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

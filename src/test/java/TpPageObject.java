@@ -81,9 +81,10 @@ public class TpPageObject {
 
         WebElement loginButton = driver.findElement((By.cssSelector("#nav-link-accountList")));
         Actions actions = new Actions(driver);
-        //actions.build();
+
         actions.moveToElement(loginButton);
         actions.perform();
+        sleeping(3000);
 
     }//action stimuler souris
 
