@@ -1,5 +1,8 @@
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -42,12 +45,11 @@ public class TpPageObject {
 
         CartPage cartPage = new CartPage(driver);
         cartPage.selectQuantity(QUANTITY);
-
-
-
-
+        System.out.println(cartPage.getFirsProductName());
+        System.out.println("*********************OH*****************");
+        System.out.println(cartPage.getInformations());
     }
-
+    @Test
     public void testPO1() {
         HomePage homePage = new HomePage(driver);
 
@@ -56,5 +58,30 @@ public class TpPageObject {
                 .openProduct(INDEX).openSearchResult(INDEX)
                 .addToCart().refuseAppleCare().openCart()
                 .selectQuantity(QUANTITY);
+       sleeping(3000);
+    }
+
+    @Test
+    public void testPO2(){
+
+        /**
+         * Hover
+         */
+        HomePage homePage = new HomePage(driver);
+
+        WebElement loginButton = driver.findElement((By.cssSelector("#nav-link-accountList")));
+        Actions actions = new Actions(driver);
+        //actions.build();
+        actions.moveToElement(loginButton);
+        actions.perform();
+
+    }//action stimuler souris
+
+    public void sleeping(int duration){
+        try {
+            Thread.sleep(duration);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

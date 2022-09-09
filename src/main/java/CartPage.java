@@ -12,8 +12,8 @@ public class CartPage {
 
     private WebDriver driver;
     private WebDriverWait wait;
-    private By quantitySelector = By.cssSelector("quantity");
-    private final int TIMEOUT_PANIER_BUTTON = 1000;
+    private By quantitySelector = By.cssSelector("#quantity");
+    private final int TIMEOUT_PANIER_BUTTON = 3000;
     //private final String QUANTITY = "2";
 
     public CartPage(WebDriver driver) {
@@ -22,8 +22,6 @@ public class CartPage {
     }
 
     public void selectQuantity(String quantity){
-
-        //WebElement dropdown = driver.findElement(By.cssSelector("#quantity"));
         WebElement dropdown = wait.until(ExpectedConditions.visibilityOfElementLocated(quantitySelector));
         Select categoriesSelect = new Select(dropdown);
         categoriesSelect.selectByValue(quantity);
