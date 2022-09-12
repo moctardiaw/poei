@@ -19,20 +19,20 @@ public class TpPageObject {
     Integer INDEX=1;
     String QUANTITY="2";
 
-    @BeforeMethod
+    //@BeforeMethod
     public void setup() {
         driver = new ChromeDriver();
         driver.get(URL);
         driver.manage().window().maximize();
     }
 
-    @AfterMethod
+    //@AfterMethod
     public void teardown() {
         driver.quit();
 
     }
 
-    @Test
+    //@Test
     public void testPO() {
         HomePage homePage = new HomePage(driver);
         homePage.acceptCookie();
@@ -59,7 +59,7 @@ public class TpPageObject {
      *          [searchWithButton]
      *                            -> amazon.SearchResultPage [openProduct] -> amazon.ProductPage -> amazon.CartPage
      */
-    @Test
+    //@Test
     public void testPO1() {
         HomePage homePage = new HomePage(driver);
 
@@ -71,7 +71,7 @@ public class TpPageObject {
        sleeping(3000);
     }
 
-    @Test
+    //@Test
     public void testPO2(){
 
         /**
