@@ -59,7 +59,7 @@ public class TpPageObject {
      *          [searchWithButton]
      *                            -> amazon.SearchResultPage [openProduct] -> amazon.ProductPage -> amazon.CartPage
      */
-    //@Test
+    //@Test1
     public void testPO1() {
         HomePage homePage = new HomePage(driver);
 
