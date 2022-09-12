@@ -1,3 +1,7 @@
+import amazon.CartPage;
+import amazon.HomePage;
+import amazon.ProductPage;
+import amazon.SearchResultPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -46,9 +50,15 @@ public class TpPageObject {
         CartPage cartPage = new CartPage(driver);
         cartPage.selectQuantity(QUANTITY);
         System.out.println(cartPage.getFirsProductName());
-        System.out.println("*********************OH_bad*****************");
+        System.out.println("*********************OH_bad_master_do*****************");
         System.out.println(cartPage.getInformations());
     }
+
+    /**
+     * amazon.HomePage [acceptCookie]
+     *          [searchWithButton]
+     *                            -> amazon.SearchResultPage [openProduct] -> amazon.ProductPage -> amazon.CartPage
+     */
     @Test
     public void testPO1() {
         HomePage homePage = new HomePage(driver);
@@ -65,15 +75,16 @@ public class TpPageObject {
     public void testPO2(){
 
         /**
-         * Hover
+         * Hover rm -rf : remove recursive force
          */
         HomePage homePage = new HomePage(driver);
 
         WebElement loginButton = driver.findElement((By.cssSelector("#nav-link-accountList")));
         Actions actions = new Actions(driver);
-        //actions.build();
+
         actions.moveToElement(loginButton);
         actions.perform();
+        sleeping(3000);
 
     }//action stimuler souris
 
