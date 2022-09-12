@@ -16,7 +16,7 @@ public class BestSellerPage {
 
     private By hoverMenuSelector = By.xpath("//*[@id=\"3663326022551\"]/div[2]/div[1]/div[2]/div[2]/a/span");
 
-
+    //*[@id="data-produit-acheter"]/button
     public BestSellerPage (WebDriver driver){
 
         this.driver = driver;
