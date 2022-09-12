@@ -22,7 +22,7 @@ public class TestPageObjet {
     public void testScenario_1(){
 
         carrefour.HomePage homePage = new carrefour.HomePage(driver);
-        homePage.acceptCookie().goShopping().hoverMenuRayon().navMenuRayon().sportMenuRayon();//.bestSellerMenuRayon();//.seeProduct();
+        homePage.acceptCookie();//.goShopping().hoverMenuRayon().navMenuRayon().sportMenuRayon();//.bestSellerMenuRayon();//.seeProduct();
         sleeping(3000);
     }
     @AfterMethod

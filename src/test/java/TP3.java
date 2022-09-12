@@ -49,18 +49,18 @@ public class TP3 {
     final String OPEN_PANIER_BUTTON  ="span#attachSiNoCoverage";
     final String SEARCH_PRODUCT="Apple iPhone 13 Pro Max (256 Go) - Vert Alpin";
 
-    @BeforeMethod
+    //@BeforeMethod
     public void setup(){
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(URL);
         wait   = new WebDriverWait(driver, Duration.ofSeconds(DURATION_WAIT));
     }
-    @AfterMethod
+    //@AfterMethod
     public void tearDown(){
         driver.quit();
     }
-    @Test
+    //@Test
     public void testScenario1(){
         //SELECTOR********************************************************************************************
 
@@ -122,7 +122,7 @@ public class TP3 {
         Assert.assertEquals(couleur.getText(),expectedCouleur ,"La couleur n'est pas correcte");
         Assert.assertEquals(configuration.getText(),expectedConfiguration ,"La configuration n'est pas correcte");
     }
-    @Test
+    //@Test
     public void testSelect() {
         WebElement dropdown = driver.findElement(By.cssSelector("#searchDropdownBox"));
         Select categoriesSelect = new Select(dropdown);
