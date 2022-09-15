@@ -1,5 +1,8 @@
-package carrefour;
+package main.java.carrefour;
 
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,22 +21,37 @@ public class HomePage {
 
     private final int TIMEOUT_COOKIE = 1000;
 
+    private static final Logger Log= LogManager.getLogger(HomePage.class);
+
     public HomePage (WebDriver driver){
 
         this.driver = driver;
     }
 
-    public carrefour.HomePage acceptCookie() {
+    /**
+     *
+     * @return HomePage
+     */
+    public HomePage acceptCookie() {
+
+        Log.info(" i want to accept cookie :Methode: "+HomePage.class.getMethods()[0].getName());
+        //Log.debug("toto");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT_COOKIE));
         WebElement buttonCookie = wait.until(ExpectedConditions.visibilityOfElementLocated(acceptCookieSelector));
         buttonCookie.click();
         return this;
+       // PageFactory
     }
 
-    public carrefour.ShoppingPage goShopping() {
+    /**
+     *
+     * @return ShoppingPage
+     */
+    public ShoppingPage goShopping() {
+        Log.info(" i want to shopping :Methode: "+HomePage.class.getMethods()[1].getName());
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT_COOKIE));
         WebElement linkShopping = wait.until(ExpectedConditions.visibilityOfElementLocated(ShoppingSelector));
         linkShopping.click();
-        return new carrefour.ShoppingPage(driver);
+        return new ShoppingPage(driver);
     }
 }

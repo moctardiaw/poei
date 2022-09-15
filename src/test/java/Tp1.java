@@ -154,17 +154,17 @@ public class Tp1 {
     }
 
     WebDriver driver;
-    @BeforeMethod
+    //@BeforeMethod
     public void setup(){
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.amazon.fr");
     }
-    @AfterMethod
+    //@AfterMethod
     public void tearDown(){
         driver.quit();
     }
-    @Test
+    //@Test
     public void testCss2() {
 
 /*

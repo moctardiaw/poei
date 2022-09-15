@@ -1,5 +1,4 @@
-package carrefour;
-
+package main.java.carrefour;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -27,13 +26,13 @@ public class ShoppingPage {
         this.driver = driver;
     }
 
-    public carrefour.ShoppingPage hoverMenuRayon() {
+    public ShoppingPage hoverMenuRayon() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT_COOKIE));
         WebElement hoverMenuShopping = wait.until(ExpectedConditions.visibilityOfElementLocated(hoverMenuSelector));
         hoverMenuShopping.click();
         return this;
     }
-    public carrefour.ShoppingPage navMenuRayon(){
+    public ShoppingPage navMenuRayon(){
 
         //WebElement navMenu = driver.findElement((By.cssSelector("#data-menu-level-0")));
 
@@ -48,7 +47,7 @@ public class ShoppingPage {
         return this;
     }
 
-    public carrefour.ShoppingPage sportMenuRayon(){
+    public ShoppingPage sportMenuRayon(){
 
         //WebElement sportMenu = driver.findElement((By.xpath("//*[@id=\"data-menu-level-0\"]/li[5]/a")));
 
@@ -63,7 +62,7 @@ public class ShoppingPage {
 
         return this;
     }
-    public carrefour.BestSellerPage bestSellerMenuRayon() {
+    public main.java.carrefour.BestSellerPage bestSellerMenuRayon() {
 
         //WebElement bestSellerMenu = driver.findElement((By.xpath("//*[@id=\"data-menu-level-1_R26\"]/li[3]/a")));
 

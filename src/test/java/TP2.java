@@ -29,18 +29,18 @@ public class TP2 {
     final String MEILLEURS_VENTES ="[data-csa-c-content-id=nav_cs_bestsellers]";
     final String AMAZON_BASICS ="[data-csa-c-slot-id=desktop-5] h2.as-title-block-left";
 
-    @BeforeMethod
+    //@BeforeMethod
     public void setup(){
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(URL);
         wait   = new WebDriverWait(driver, Duration.ofSeconds(DURATION_WAIT));
     }
-    @AfterMethod
+    //@AfterMethod
     public void tearDown(){
         driver.quit();
     }
-    @Test
+    //@Test
     public void testFlow(){
         /*Click Cookie Button*/
         WebElement buttonCookie   = wait.until(ExpectedConditions.elementToBeClickable(By.id(BUTTON_COOK)));
@@ -60,7 +60,7 @@ public class TP2 {
         productLists.get(3).click();
         sleeping(1000);
     }
-    @Test
+    //@Test
     public void testAssert(){
         //ARRANGE :
         final String expectedToutes              = "Toutes";
@@ -81,7 +81,7 @@ public class TP2 {
         Assert.assertTrue(meilleursVentes.isDisplayed());//for bool
         //Assert.assertEquals(amazonBasics.getText(),expectedAmazonBasics,expectedMessageAmazonBasics);//for string
     }
-    @Test
+    //@Test
     public void testSelect() {
         WebElement dropdown = driver.findElement(By.cssSelector("#searchDropdownBox"));
         Select categoriesSelect = new Select(dropdown);
