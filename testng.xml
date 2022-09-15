@@ -3,12 +3,14 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="C:/Users/ib/IdeaProjects/poei-selenium-ft/src/test/java/carrefour/scenario1/TestPageObjet.java">
         <classes>
-            <class name="carrefour.scenario1.TestPageObjet">
+            <class name="test.java.carrefour.scenario1.TestPageObjet">
                 <methods><include name="testScenario_1"/></methods>
             </class>
-            <class name="carrefour.scenario1.TestScenarioGlobal">
-                <methods><include name="testScenario_1"/></methods>
+
+            <class name="test.java.carrefour.scenario1.TestScenarioGlobal">
+                <methods><include name="testScenario_2"/></methods>
             </class>
+
         </classes>
     </test>
     <!--

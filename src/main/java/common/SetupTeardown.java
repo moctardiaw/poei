@@ -1,37 +1,28 @@
-package common;
+package main.java.common;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.CapabilityType;
-import java.net.MalformedURLException;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-
-
 public class SetupTeardown {
 
-    protected WebDriver driver;
-    ChromeOptions options;
-    protected String carrefourURL = "https://www.carrefour.fr/";
-
+    protected WebDriver drivers;
+    protected DriverFactory driver;
+    protected String browser="edge";
+    final String carrefourURL = "https://www.carrefour.fr/";
 
     @BeforeMethod
-    public void setup() throws MalformedURLException {
+    public void setup()  {
 
-        options = new ChromeOptions();
-        options.setCapability(CapabilityType.BROWSER_NAME,"chrome");
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get(carrefourURL);
+        DriverFactory driver = new DriverFactory();
+        drivers = driver.getDriver(browser);
 
-
+        drivers.manage().window().maximize();
+        drivers.get(carrefourURL);
     }
 
     @AfterMethod
     public void teardown(){
-        driver.quit();
+        drivers.quit();
     }
 }

@@ -1,29 +1,22 @@
-package carrefour.scenario1;
+package test.java.carrefour.scenario1;
 
-import common.SetupTeardown;
-import common.Wait;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.CapabilityType;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+//import common.Wait;
+
+import main.java.carrefour.HomePage;
+import main.java.common.SetupTeardown;
+
 import org.testng.annotations.Test;
-
-import java.net.MalformedURLException;
-
 
 public class TestScenarioGlobal extends SetupTeardown {
 
-    Wait wait;
+    //Wait wait;
 
     @Test
-    public void testScenario_1(){
+    public void testScenario_2(){
 
-        carrefour.HomePage homePage = new carrefour.HomePage(driver);
+        HomePage homePage = new HomePage(drivers);
         homePage.acceptCookie().goShopping();//.hoverMenuRayon().navMenuRayon().sportMenuRayon();//.bestSellerMenuRayon().seeProduct();
-        Wait.sleeping(3000);
+        //wait.sleeping(3000);
     }
 
 }

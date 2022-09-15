@@ -1,4 +1,4 @@
-package carrefour;
+package main.java.carrefour;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -26,7 +26,7 @@ public class BestSellerPage {
      *
      * @return
      */
-    public carrefour.BestSellerPage seeProduct() {
+    public main.java.carrefour.BestSellerPage seeProduct() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT_COOKIE));
         WebElement hoverMenuShopping = wait.until(ExpectedConditions.visibilityOfElementLocated(hoverMenuSelector));
         hoverMenuShopping.click();

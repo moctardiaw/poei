@@ -1,4 +1,5 @@
-package carrefour;
+package main.java.carrefour;
+
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -31,7 +32,7 @@ public class HomePage {
      *
      * @return HomePage
      */
-    public carrefour.HomePage acceptCookie() {
+    public HomePage acceptCookie() {
 
         Log.info(" i want to accept cookie :Methode: "+HomePage.class.getMethods()[0].getName());
         //Log.debug("toto");
@@ -39,17 +40,18 @@ public class HomePage {
         WebElement buttonCookie = wait.until(ExpectedConditions.visibilityOfElementLocated(acceptCookieSelector));
         buttonCookie.click();
         return this;
+       // PageFactory
     }
 
     /**
      *
      * @return ShoppingPage
      */
-    public carrefour.ShoppingPage goShopping() {
+    public ShoppingPage goShopping() {
         Log.info(" i want to shopping :Methode: "+HomePage.class.getMethods()[1].getName());
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT_COOKIE));
         WebElement linkShopping = wait.until(ExpectedConditions.visibilityOfElementLocated(ShoppingSelector));
         linkShopping.click();
-        return new carrefour.ShoppingPage(driver);
+        return new ShoppingPage(driver);
     }
 }
