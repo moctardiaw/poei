@@ -22,6 +22,10 @@ public class BestSellerPage {
         this.driver = driver;
     }
 
+    /**
+     *
+     * @return
+     */
     public carrefour.BestSellerPage seeProduct() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT_COOKIE));
         WebElement hoverMenuShopping = wait.until(ExpectedConditions.visibilityOfElementLocated(hoverMenuSelector));
