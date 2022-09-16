@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    triggers {
+        cron ('0 12 * * 1-5')
+    }
+
     stages {
         stage('Init') {
             steps {
@@ -13,4 +17,10 @@ pipeline {
             }
         }
     }
+
+    post {
+            always {
+              step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
+            }
+          }
 }
