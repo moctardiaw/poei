@@ -1,0 +1,12 @@
+{
+  "testExecutionKey" : "POEI22-689",
+  "info" : {
+    "summary" : "Execution of automated tests by Moctar Curry",
+    "description" : "This execution is automatically"
+  },
+  "tests" : [ {
+    "testKey" : "POEI22-680",
+    "comment" : "Successful execution for Moctar",
+    "status" : "PASSED"
+  } ]
+}
